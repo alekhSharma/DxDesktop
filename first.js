@@ -5,13 +5,15 @@ var express = require('express');
 var app = express();
 var server = http.createServer(app);
 var io = require('socket.io')(server);
-
+const PORT = process.env.PORT || 5000
 const path = require('path')
 
+express()
+.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+
 app.use(express.static(__dirname+'/public'));
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+
 app.get('/',function(req,res,next){
   res.sendfile(__dirname+'/public/index.html');
 })
