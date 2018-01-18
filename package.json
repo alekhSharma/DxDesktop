@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/alekhSharma/DxDesktop/issues"
   },
-  "homepage": "https://github.com/alekhSharma/DxDesktop#readme"
+  "homepage": "https://github.com/alekhSharma/DxDesktop#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "multer": "^1.3.0",
+    "sfdx-node": "0.0.1",
+    "socket.io": "^2.0.4"
+  }
 }
