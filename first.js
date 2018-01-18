@@ -8,14 +8,11 @@ var io = require('socket.io')(server);
 const PORT = process.env.PORT || 3000
 const path = require('path')
 
-
-
-io.on('connection', function(){ /* … */ });
-
-
-app()
+express()
 .use(express.static(path.join(__dirname, 'public')))
 .get('/', (req, res) => res.render('index'))
+.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
 
 
 
