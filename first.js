@@ -10,7 +10,7 @@ const path = require('path')
 
 express()
 .use(express.static(path.join(__dirname, 'public')))
-.get('/', (req, res) => res.render('public/index'))
+.get('/', (req, res) => res.render('index'))
 .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
