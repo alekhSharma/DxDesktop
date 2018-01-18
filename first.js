@@ -1,17 +1,22 @@
 var sfdx = require('sfdx-node');
-var http = require('http');
 var express = require('express');
 
-var app = express();
-var server = http.createServer(app);
+var app = require('express')();
+var server = require('http').createServer(app);
 var io = require('socket.io')(server);
+
 const PORT = process.env.PORT || 5000
 const path = require('path')
 
-express()
+
+
+io.on('connection', function(){ /* … */ });
+
+
+app()
 .use(express.static(path.join(__dirname, 'public')))
 .get('/', (req, res) => res.render('index'))
-.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
 
 
 app.use(express.static(__dirname+'/public'));
@@ -75,3 +80,4 @@ io.on('connection', function(client) {
       })
 });
 
+server.listen(3000);
