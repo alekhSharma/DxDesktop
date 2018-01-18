@@ -10,13 +10,11 @@ const path = require('path')
 
 express()
 .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
+.get('/', (req, res) => res.render('pages/index'))
 
 app.use(express.static(__dirname+'/public'));
 
-app.get('/',function(req,res,next){
-  res.sendfile(__dirname+'/public/index.html');
-})
+
 
 // list of scratch orgs
 var list_of_orgs = sfdx.org.list();
