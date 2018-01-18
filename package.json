@@ -1,0 +1,19 @@
+{
+  "name": "mynodeapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "first.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alekhSharma/DxDesktop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alekhSharma/DxDesktop/issues"
+  },
+  "homepage": "https://github.com/alekhSharma/DxDesktop#readme"
+}
