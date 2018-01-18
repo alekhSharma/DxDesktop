@@ -68,10 +68,7 @@ io.on('connection', function(client) {
       })
 });
 
-//when a client connects, do this
-server.listen(3000, function(){
-  console.log('listening on *:3000');
-})
+
 
 
 
