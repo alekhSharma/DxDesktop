@@ -85,7 +85,6 @@
 
         <!-- script -->
 
-
         <script src="/socket.io/socket.io.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">  
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -96,7 +95,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-        <!-- script End -->
 
     </head>
 
@@ -203,11 +201,10 @@
      </div>
     <!-- End page content -->
 
+<script>
 
-        <script>
+            var socket = io.connect();
 
-	        var socket = io.connect();
-           
 			function listMyOrg()
                 {
 			            socket.emit('clicked');
@@ -297,7 +294,6 @@
                         var divContainer = document.getElementById("showData");
                         divContainer.innerHTML="";
                         divContainer.appendChild(table);
-
                         modal.style.display = "block";
 
                  });       
@@ -318,6 +314,8 @@
        
         
         </script>
+        <!-- script End -->
+        
     </body>
     <!-- End Body tag -->
 </html>

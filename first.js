@@ -1,24 +1,18 @@
 var sfdx = require('sfdx-node');
-var http = require('http');
 var express = require('express');
-var app = express();
-var server = http.createServer(app);
-var io = require('socket.io')(server);
 
+var app = require('express')();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
 
 const PORT = process.env.PORT || 3000
 const path = require('path')
 
-app.use(express.static(__dirname+'/public'));
-app.get('/',function(req,res,next){
-  res.sendfile(__dirname+'/public/index.html');
-})
+app
+.use(express.static(path.join(__dirname, '/public')))
+.get('/', (req, res) => res.render('/index'))
 
-express()
-.use(express.static(path.join(__dirname, 'public')))
-.get('/', (req, res) => res.render('index'))
-.listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
+server.listen(PORT);
 
 // list of scratch orgs
 var list_of_orgs = sfdx.org.list();
@@ -76,3 +70,4 @@ io.on('connection', function(client) {
           });
       })
 });
+
