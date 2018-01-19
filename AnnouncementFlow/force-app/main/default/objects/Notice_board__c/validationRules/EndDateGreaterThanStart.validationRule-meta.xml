@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>EndDateGreaterThanStart</fullName>
-    <active>true</active>
-    <errorConditionFormula>IF( end_date_time__c  &lt;  Start_date_time__c ,True,false)</errorConditionFormula>
-    <errorMessage>End Date/time should be ahead of Start Date/time</errorMessage>
-</ValidationRule>
