@@ -11,7 +11,7 @@ const server = express()
 .get('/', (req, res) => res.render('/index'))
 .listen(PORT, ()=> console.log('LISTENING on ${PORT}'));
 
-var io = require('socket.io')(server);
+var io = SocketIO(server);
 
 // list of scratch orgs
 var list_of_orgs = sfdx.org.list();
