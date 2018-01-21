@@ -23,6 +23,8 @@ io.on('connection', (socket) => {
               setalias: 'HubOrg'
           }).then(function(){
             console.log('inside command');
+            console.log(sfdx.org.list());
+            return sfdx.auth.webLogin();
           })
       })
 });
