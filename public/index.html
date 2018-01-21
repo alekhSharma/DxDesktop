@@ -106,7 +106,7 @@
         <a class="navbar-brand w3-xlarge" href="#" >DX</a>
         <ul class="navbar-nav">
             <li class="nav-item">
-         
+         		
             </li>
             <li class="nav-item">
                 
@@ -134,13 +134,14 @@
 
         <!-- Command content -->
           <!-- INDEX OF THE PAGE --> 
-            <p><a href="#C4">Scratch Orgs</a></p>
-            <p><a href="#C4">Apex Class</a></p>
-
+          <div class="w3-container ">
+            <p><a href="#C4">Scratch Orgs</a>
+            <a href="#C4">Apex Class</a></p>
+          </div>
             
             <!--END INDEX OF THE PAGE -->
         
-        <div class="w3-container"> 
+        <div class="w3-container" id="C4"> 
 
             <!-- Card Authenticate -->
                 <div class="card w3-margin bg-primary text-white w3-center" style="width:15%;">
@@ -231,6 +232,7 @@
 
             function openMyOrg(){
                 socket.emit('OpenOrg');
+                console.log(socket);
             }
 
             
