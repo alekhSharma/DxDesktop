@@ -206,7 +206,18 @@
 
             var socket = io.connect('',{transport: ['websocket']});
 
-			function listMyOrg()
+            function openMyOrg(){
+                console.log('inside function');
+                socket.emit('time', function(data) {
+               console.log(data);
+             });
+
+            }
+
+
+             
+
+		/*	function listMyOrg()
                 {
 			            socket.emit('clicked');
 			 
@@ -313,7 +324,7 @@
             }
   
        
-        
+        */
         </script>
         <!-- script End -->
         
