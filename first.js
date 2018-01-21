@@ -2,17 +2,16 @@ var sfdx = require('sfdx-node');
 var express = require('express');
 
 var app = require('express')();
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
 
 const PORT = process.env.PORT || 3000
 const path = require('path')
 
-app
+const server = express()
 .use(express.static(path.join(__dirname, '/public')))
 .get('/', (req, res) => res.render('/index'))
+.listen(PORT, ()=> console.log('LISTENING on ${PORT}'));
 
-server.listen(PORT);
+var io = require('socket.io')(server);
 
 // list of scratch orgs
 var list_of_orgs = sfdx.org.list();
@@ -22,12 +21,12 @@ list_of_orgs
   }); 
 
 
-io.on('connection', function(client) {  
+io.on('connection', (socket) =>  {  
 
    console.log('Client connected...');
 
-      
-      client.on('clicked', function() {
+   /*   
+      socket.on('clicked', function() {
         var list_of_orgs = sfdx.org.list();
         list_of_orgs
           .then(function(data){       
@@ -36,6 +35,8 @@ io.on('connection', function(client) {
                   io.emit('buttonUpdate', data);
               });
           });
+
+      
 
        client.on('ModelList', function() {
         var list_of_orgs = sfdx.org.list();
@@ -48,7 +49,7 @@ io.on('connection', function(client) {
               });
           });
 
-      client.on('createOrg',function(){
+      socket.on('createOrg',function(){
           sfdx.org.open({
             targetusername : 'alekh.newdx@cognizant.com'
           }).then(function(){
@@ -58,7 +59,8 @@ io.on('connection', function(client) {
       });
 
     
-      client.on('OpenOrg', function()
+*/
+      socket.on('OpenOrg', function()
       {
           //authorize a dev hub
           sfdx.auth.webLogin({
@@ -66,8 +68,9 @@ io.on('connection', function(client) {
               setalias: 'HubOrg'
           })
           .then(function(){
-            console.log('Source pushed to scratch org');  
+            console.log('Auth button clicked');  
           });
       })
+
 });
 

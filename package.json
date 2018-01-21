@@ -4,9 +4,11 @@
   "main": "first.js",
   "dependencies": {
     "express": "^4.16.2",
-    "sfdx-node": "^0.0.1",
+    "nodemon": "^1.14.11",
+    "sfdx-node": "0.0.1",
     "socket.io": "^2.0.4",
-    "socket.io-client": "^2.0.4"
+    "socket.io-client": "^2.0.4",
+    "util.promisify": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {

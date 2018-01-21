@@ -204,7 +204,7 @@
 
 <script>
 
-            var socket = io.connect('',{transports: ['websocket']});
+            var socket = io.connect('',{transport: ['websocket']});
 
 			function listMyOrg()
                 {
@@ -232,7 +232,6 @@
 
             function openMyOrg(){
                 socket.emit('OpenOrg');
-                console.log(socket);
             }
 
             
