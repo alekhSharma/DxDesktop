@@ -21,9 +21,10 @@ io.on('connection', (socket) => {
         sfdx.auth.webLogin({
               setdefaultdevhubusername: true,
               setalias: 'HubOrg'
+          }).then(function(){
+            console.log('inside command');
           })
-      });
-  
+      })
 });
 
 
