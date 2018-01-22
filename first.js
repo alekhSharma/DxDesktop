@@ -3,7 +3,7 @@ var express = require('express');
 
 var app = require('express')();
 var server = require('http').createServer(app);
-var io = require('socket.io')(server, {'transports': ['websocket', 'polling']});
+var io = require('socket.io')(server, {'transports': ['websocket']});
 
 const PORT = process.env.PORT || 3000
 const path = require('path')
