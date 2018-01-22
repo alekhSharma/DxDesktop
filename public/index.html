@@ -204,7 +204,16 @@
 
 <script>
 		
-		 var socket = io.connect({'transports': ['websocket']});
+		var socket = io({
+  transports: [
+    'websocket', 
+    'flashsocket', 
+    'htmlfile', 
+    'xhr-polling', 
+    'jsonp-polling', 
+    'polling'
+  ]
+});
            
 
 			function listMyOrg()
