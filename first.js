@@ -1,18 +1,18 @@
 var sfdx = require('sfdx-node');
 
-const express = require('express');
-const socketIO = require('socket.io');
-const path = require('path');
+var express = require('express');
+var app = express();
+var path = require('path');
+var server = require('http').createServer(app);
+var io = require('../..')(server);
+var port = process.env.PORT || 3000;
 
-const PORT = process.env.PORT || 3000;
-const INDEX = path.join(__dirname, '/public/index.html');
+server.listen(port, function () {
+  console.log('Server listening at port %d', port);
+});
 
-const server = express()
-  .use((req, res) => res.sendFile(INDEX) )
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
-
-const io = socketIO(server);
-
+// Routing
+app.use(express.static(path.join(__dirname, 'public')));
 io.on('connection', (socket) => {
   console.log('Client connected');
   socket.on('disconnect', () => console.log('Client disconnected'));
