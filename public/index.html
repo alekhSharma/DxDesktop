@@ -204,16 +204,7 @@
 
 <script>
 		
-		var socket = io({
-  transports: [
-    'websocket', 
-    'flashsocket', 
-    'htmlfile', 
-    'xhr-polling', 
-    'jsonp-polling', 
-    'polling'
-  ]
-});
+		  var io = io( 'dxdesktop.herokuapp.com', {'transports': ['websocket', 'polling']});
            
 
 			function listMyOrg()
