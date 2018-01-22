@@ -203,8 +203,8 @@
     <!-- End page content -->
 
 <script>
-		var host = window.location.hostname; 
-		var socket = io.connect('https://' + host);
+		
+		var socket = io.connect('',{ transports: ['websocket', 'polling'] });
            
 
 			function listMyOrg()
