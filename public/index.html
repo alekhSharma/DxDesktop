@@ -204,7 +204,7 @@
 
 <script>
 		
-		var socket = io.connect('dxdesktop.herokuapp.com');
+		 var server = io( serverUri, {'transports': ['websocket', 'polling']});
            
 
 			function listMyOrg()
