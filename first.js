@@ -36,7 +36,7 @@ io.on('connection', function(client) {
                   io.emit('buttonUpdate', data);
               });
           });
-
+ 
        client.on('ModelList', function() {
         var list_of_orgs = sfdx.org.list();
         list_of_orgs
