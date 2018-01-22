@@ -203,8 +203,9 @@
     <!-- End page content -->
 
 <script>
-
-            var socket = io.connect('54.221.211.25',{transports: ['websocket']});
+		var host = window.location.hostname; 
+var socket = io.connect('http://' + host);
+           
 
 			function listMyOrg()
                 {
