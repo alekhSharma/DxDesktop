@@ -203,8 +203,7 @@
     <!-- End page content -->
 
 <script>
-
-            var socket = io.connect('',{transport: ['websocket']});
+		var socket = io();
 
             function openMyOrg(){
                 console.log('inside function');
