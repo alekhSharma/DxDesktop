@@ -13,7 +13,7 @@ app
 .get('/', (req, res) => res.render('/index'))
 
 server.listen(PORT);
-
+console.log(PORT);
 // list of scratch orgs
 var list_of_orgs = sfdx.org.list();
 list_of_orgs
